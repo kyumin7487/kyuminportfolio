@@ -1,0 +1,99 @@
+@charset "utf-8";
+/* 구글 폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Infant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Noto+Sans+KR&family=Public+Sans:ital@1&display=swap');
+
+/* Reset */
+* {margin: 0;padding: 0;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+a {color: inherit; text-decoration: inherit;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+button {background: none; border: none;}
+img {vertical-align: middle;}
+
+/* 영어폰트 */
+.en {font-family: "Public Sans", sans-serif;}
+.en2 {font-family: "Cormorant Infant", system-ui;}
+
+/* layout */
+body {
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.wrap {
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: #000;
+    color: #FFF;
+}
+
+/* header */
+header {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 100;
+    padding: 30px 60px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+}
+
+header .menuOpen {
+    display: none;
+    transition: 0.3s;
+}
+
+header .logo {
+    color: #FFF;
+}
+
+.gnb ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.gnb ul li {
+    margin-left: 70px;
+}
+
+.gnb ul li a {
+    display: block;
+}
+
+/* gnb hover Effect */
+.gnb ul li a .char {
+    display: inline-block;
+    position: relative;
+    color: transparent;
+    overflow: hidden;
+}
+
+.gnb ul li a .char:before, .gnb ul li a .char:after {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    opacity: 0.6;
+    color: #FFF;
+    content: attr(data-char);
+    transition: transform 0.35s;
+    transition-delay: calc(30ms * var(char-index));
+}
+
+.gnb ul li a .char:before {
+    transform: translateY(100%);
+}
+
+.gnb ul li a:hover .char:before {
+    transform: translateY(0%);
+    opacity: 1;
+}
+
+.gnb ul li a:hover .char:after {
+    transform: translateY(-100%);
+}

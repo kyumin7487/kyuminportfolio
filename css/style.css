@@ -140,6 +140,41 @@ header .logo {
 .visual .svgAni {
     position: absolute;
     right: 10%;
-    top: -30%;
+    top: -29%;
     width: 50%;
+}
+
+/* animation */
+.visual.motion .mainText {
+    transform: translate3d(0,0,0) skewY(0deg);
+    overflow: hidden;
+}
+
+.visual.motion .mainText p span {
+    display: block;
+    animation-name: textAni;
+    animation-duration: 1.8s;
+}
+
+.visual.motion .mainText p:nth-child(2) span {
+    animation-duration: 1.7s;
+}
+
+.visual.motion .mainText p:nth-child(3) span {
+    animation-duration: 1.5s;
+}
+
+@keyframes textAni {
+    0% {opacity: 0;}
+    30% {opacity: 0; transform: translate3d(0,-90px,0) skewY(-10deg); transform-origin: top left;}
+}
+
+@keyframes textani2 {
+    0% {opacity: 0;}
+    30% {opacity: 0;}
+}
+
+.visual.motion .subText {
+    animation-name: textani2;
+    animation-duration: 2.3s;
 }

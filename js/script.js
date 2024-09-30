@@ -18,9 +18,18 @@ $(function() {
     })
 });
 
+// scrolla.js
 $(function() {
     $('.animate').scrolla({
         moblie: true,
         once: false, 
     }); 
+});
+
+// svg path 길이 구하기
+$(function() { 
+    $('.svgAni').find('#svgAni6').each(function(i, path) {
+        var length = path.getTotalLength();
+        // alert(length)
+    });
 });

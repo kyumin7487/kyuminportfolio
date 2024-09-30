@@ -135,6 +135,7 @@ header .logo {
     position: fixed;
     left: 60px;
     bottom: 40px;
+    z-index: 1000;
 }
 
 .visual .svgAni {
@@ -177,4 +178,65 @@ header .logo {
 .visual.motion .subText {
     animation-name: textani2;
     animation-duration: 2.3s;
+}
+
+/* svg 모션 */
+/* Ani01 1699.579833984375
+   Ani02 678.2537841796875
+   Ani03 746.4968872070312
+   Ani04 610.8040771484375
+   Ani05 697.3184204101562
+   Ani06 1566.4052734375 */
+.visual.motion #svgAni01 {
+    stroke-dasharray: 1699;
+    stroke-dashoffset: 1699; 
+    animation: ani1 2s linear 2s forwards;
+}
+.visual.motion #svgAni02 {
+    stroke-dasharray: 678;
+    stroke-dashoffset: 678;
+    animation: ani2 .5s linear .1s forwards;
+}
+
+@keyframes ani1 {
+    0% {stroke-dashoffset: 1699;}
+    100% {stroke-dashoffset: 0;}
+}
+
+@keyframes ani2 {
+    0% {stroke-dashoffset: 678;}
+    100% {stroke-dashoffset: 0;}
+}
+
+/* setion.con01 */
+.con01 {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+.con01 .videoWrap video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.con01 .title {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #FFFFFF;
+}
+
+.con01 .title h2 {
+    font-size: 80px;
+    font-weight: 400;
+    letter-spacing: -1px;
+    line-height: 1.2;
 }

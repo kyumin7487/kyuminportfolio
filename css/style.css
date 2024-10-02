@@ -292,3 +292,62 @@ header .logo {
     justify-content: space-between;
     color: #888;
 }
+
+/* con02. workList hover */
+.con02 .workList li a .imgBox {
+    position: relative;
+}
+
+.con02 .workList li a .imgBox::before {
+    content: '';
+    width: 168px;
+    height: 168px;
+    border-radius: 100%;
+    border: 1px solid #fff;
+    background: url("../images/readMore2.png") no-repeat center/35px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    z-index: 1;
+    transition: all;
+    opacity: 0;
+}
+
+.con02 .workList li a .imgBox::after {
+    content: '';
+    width: 0px;
+    height: 0px;
+    border-radius: 100%;
+    border: 1px solid #fff;
+    background: #fff url("../images/readMore3.png") no-repeat center/160px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: spin 10s linear infinite; 
+    -webkit-animation: spin 10s linear infinite; 
+    transition: .4s;
+    z-index: 1;
+}
+
+@keyframes spin {
+    0% {transform: translate(-50%, -50%) rotate(0deg);}
+    100% {transform: translate(-50%, -50%) rotate(360deg);}
+}
+
+@-webkit-keyframes spin {
+    0% {transform: translate(-50%, -50%) rotate(0deg);}
+    100% {transform: translate(-50%, -50%) rotate(360deg);}
+}
+
+/* hover */
+.con02 .workList li a:hover .imgBox::before {
+    opacity: 1;
+    z-index: 2;
+}
+
+.con02 .workList li a:hover .imgBox::after {
+    width: 168px;
+    height: 168px;
+}

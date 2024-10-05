@@ -249,7 +249,8 @@ header .logo {
     line-height: 0.9;
     text-align: center;
     padding-top: 30px;
-    box-sizing: border-box;                                                                            
+    box-sizing: border-box;             
+    z-index: 1;                                                               
 }
 
 .con02 .title .en2{
@@ -267,6 +268,7 @@ header .logo {
 .con02 .workList li {
     width: 45%;
     margin-top: 200px;
+    z-index: 2;
 }
 
 .con02 .workList li:nth-child(2n) {

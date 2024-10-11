@@ -105,4 +105,23 @@ $(function() {
         {margin: '0 auto'}, 
         {margin: '100vh auto 0', position: 'relative', zIndex: '10', duration: 5},
         0)
+
+    // workList가 끝날때 My Work가 화면 밖으로 사라지도록 애니메이션 적용
+    gsap.timeline({
+        scrollTrigger: {
+            trigger: '.workList',
+            start: '100% 50%',
+            end: '100% 0%',
+            scrub: 1
+        }
+    })
+    
+    .to('.con02 .title .a',
+        {x: '-100%', ease: 'none', duration: 5},
+        0
+    )
+    .to('.con02 .title .b',
+        {x: '100%', ease: 'none', duration: 5},
+        0
+    )
 });
